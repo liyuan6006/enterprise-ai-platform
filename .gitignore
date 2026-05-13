@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Docker
+postgres_data/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# AI secrets
+*.pem
+*.key
+
+# Node
+node_modules/
+
+# Build
+dist/
+build/
+
+# JetBrains
+.idea/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Pytest
+.pytest_cache/
+
+# Env files
+.env.*
