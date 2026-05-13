@@ -10,7 +10,11 @@ from tools.fraud_tool import (
 from tools.policy_tool import (
     get_expense_policy
 )
+from rag.retrieval_service import (
+    RetrievalService
+)
 
+retrieval_service = RetrievalService()
 
 def load_local_env():
 
@@ -49,9 +53,12 @@ class AgentService:
             expense
         )
 
-        policy_result = await get_expense_policy(
-            expense["category"]
-        )
+        # policy_result = await get_expense_policy(
+        #     expense["category"]
+        # )
+        policy_results = retrieval_service.retrieve(
+        expense["description"]
+)
 
         prompt = f"""
 You are a financial AI risk agent.
@@ -63,7 +70,7 @@ Fraud Result:
 {fraud_result}
 
 Policy Result:
-{policy_result}
+{policy_results}
 
 Analyze the expense.
 
@@ -93,7 +100,7 @@ Respond professionally.
 
         return {
             "fraud_result": fraud_result,
-            "policy_result": policy_result,
+            "policy_result": policy_results,
             "ai_analysis":
                 response.choices[0]
                 .message

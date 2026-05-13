@@ -1,0 +1,9 @@
+Travel expenses under $3000 are automatically approved.
+
+Luxury hotels require director approval.
+
+Casino-related expenses are prohibited.
+
+International travel requires compliance review.
+
+Airfare business class is allowed only for VP level and above.
